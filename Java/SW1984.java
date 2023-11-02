@@ -26,8 +26,7 @@ public class SW1984 {
                     sum += score[i];
                 }
             }
-            System.out.println(Math.round(sum/8));
-            // System.out.println("#" + t + " " + sum/8);
+            System.out.println("#" + t + " " + Math.round(sum/8));
         }
     }
 }
