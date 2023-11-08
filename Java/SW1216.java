@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class SW1216 {
     static StringBuilder sb = new StringBuilder();
@@ -18,7 +17,6 @@ public class SW1216 {
                 }
             }
             
-
             int max = 0, max2 = 0;
             for (int i = 0; i < 100; i++) { //행
                 for (int j = 0; j < 100; j++) { //열
@@ -26,14 +24,19 @@ public class SW1216 {
                     sb2.setLength(0);
                     for (int k = j; k < 100; k++) {
                         sb.append(graph[i][k]);
-                        sb2.append(graph[k][i]);
+                        String x = sb.toString();
+                        String y = sb.reverse().toString();
 
-                        if (sb.toString().equals(sb.reverse().toString())) {
-                            max = Math.max(max, sb.toString().length());
+                        sb2.append(graph[k][i]);
+                        String x2 = sb2.toString();
+                        String y2 = sb2.reverse().toString();
+
+                        if (x.equals(y)) {
+                            max = Math.max(max, x.length());
                         }
 
-                        if (sb2.toString().equals(sb2.reverse().toString())) {
-                            max2 = Math.max(max2, sb.toString().length());
+                        if (x2.equals(y2)) {
+                            max2 = Math.max(max2, x2.length());
                         }
                         sb.reverse();
                         sb2.reverse();
