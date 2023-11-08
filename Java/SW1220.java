@@ -6,7 +6,7 @@ public class SW1220 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        for (int t = 1; t <= 1; t++) {
+        for (int t = 1; t <= 10; t++) {
             int N = Integer.parseInt(br.readLine());
             int[][] graph = new int[N][N];
             int answer = 0;
@@ -17,8 +17,6 @@ public class SW1220 {
                     graph[i][j] = Integer.parseInt(st.nextToken());
                 }
             }
-            // System.out.println(Arrays.deepToString(graph));
-
             
             for (int i = 0; i < N; i++) {    
                 boolean isOne = false; //1다음 2가 나오는지 확인
