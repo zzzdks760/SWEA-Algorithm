@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class SW5215 {
-    static StringBuilder sb = new StringBuilder();
     static int[] score;
     static int[] kcal;
     static int N, L, answer;
@@ -22,25 +21,22 @@ public class SW5215 {
                 score[i] = Integer.parseInt(st.nextToken());
                 kcal[i] = Integer.parseInt(st.nextToken());
             }
-
             answer = 0;
             dfs(0, 0, 0);
-
-            sb.append("#").append(t).append(" ").append(answer);
+            System.out.println("#" + t + " " + answer);
         }
-        System.out.println(sb);
     }
 
     static void dfs(int idx, int scr, int kal) {
         if (kal > L) {
             return;
         }
+
         if (idx == N) {
             answer = Math.max(answer, scr);
             return;
         }
-
-        //재료를 추가하는 경우
+        //재료를 추가할 경우
         dfs(idx + 1, scr + score[idx], kal + kcal[idx]);
         //재료를 추가하지 않고 건너띄는 경우
         dfs(idx + 1, scr, kal);
