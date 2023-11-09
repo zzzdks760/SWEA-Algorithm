@@ -17,8 +17,9 @@ public class SW1230 {
             int M = Integer.parseInt(br.readLine()); //세번째줄
             st = new StringTokenizer(br.readLine()); //네번째줄
 
-            for (int i = 0; i < M; i++) {  
-                if (st.nextToken().equals("I")) {
+            while (st.hasMoreTokens()) {
+                String cmd = st.nextToken();  
+                if (cmd.equals("I")) {
                     int x = Integer.parseInt(st.nextToken());
                     int y = Integer.parseInt(st.nextToken());
 
@@ -27,7 +28,7 @@ public class SW1230 {
                         x++;
                     }
 
-                } else if (st.nextToken().equals("D")) {
+                } else if (cmd.equals("D")) {
                     int x = Integer.parseInt(st.nextToken());
                     int y = Integer.parseInt(st.nextToken());
                     
@@ -35,7 +36,7 @@ public class SW1230 {
                         list.remove(x);
                     }
 
-                } else if (st.nextToken().equals("A")) {
+                } else if (cmd.equals("A")) {
                     int y = Integer.parseInt(st.nextToken());
 
                     for (int j = 0; j < y; j++) {
