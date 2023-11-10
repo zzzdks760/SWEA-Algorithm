@@ -35,10 +35,10 @@ public class SW2814 {
     }
 
     static void dfs(int idx, int cnt) {
+        visited[idx] = true;
 
         for (int i = 1; i <= N; i++) {
             if (graph[idx][i] == 1 && !visited[i]) {
-                visited[i] = true;
                 dfs(i,cnt+1);
                 visited[i] = false;
             }
